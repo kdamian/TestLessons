@@ -62,6 +62,7 @@
     <Compile Include="PropertyTaxCalcDK.cs" />
     <Compile Include="PropertyTaxCalcTest.cs" />
     <Compile Include="MathFunctionsTestDK.cs" />
+    <Compile Include="PropertyTaxCalcTestDK.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
