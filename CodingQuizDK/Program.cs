@@ -11,6 +11,9 @@ namespace CodingQuizDK
             int noOutsiderange = 0;
 
             PrimeArray(entries);
+            cntOfInvalidEntries = GetValues(entries, ref noOutsiderange);
+            DisplayResults(entries, cntOfInvalidEntries, noOutsiderange);
+            Console.ReadKey();
         }
 
         public static void PrimeArray(int[] entries)
@@ -21,19 +24,65 @@ namespace CodingQuizDK
             }
         }
 
-        public static int GetValue(int[] entries, ref int noOutsideRange)
+        public static int GetValues(int[] entries, ref int noOutsideRange)
         {
             int inValue;
             string outPut;
+            string stringInput;
             bool moreInput = true;
-            int cntOfInvalidEntries;
+            int cntOfInvalidEntries = 0;
 
             Console.Clear();
 
-            while (true)
+            while (moreInput)
             {
+                Console.Write("\nInput any value between 0-10 (-1 to stop)");
+                stringInput = Console.ReadLine();
 
+                while (int.TryParse(stringInput, out inValue) == false)
+                {
+                    Console.Write("\nInvalid data type -" + " value must be numeric between 0-10 (-1 to stop)");
+                    stringInput = Console.ReadLine();
+                    cntOfInvalidEntries++;
+                }
+
+                if (inValue == -1)
+                {
+                    moreInput = false;
+                }
+                else if(inValue < -1 || inValue > 10)
+                {
+                    Console.WriteLine("Invalid value, value must be between 0-10 (-1 to stop)");
+                    noOutsideRange++;
+                }
+                else
+                {
+                    entries[inValue]++;
+                }
             }
+            return cntOfInvalidEntries;
+        }
+
+        public static void DisplayResults(int[] entries, int cntOfInvalidEntries, int noOutsiderange)
+        {
+            int cntOfValidEntries = 0;
+            Console.Clear();
+            Console.WriteLine("\tInput Data App\n");
+            Console.WriteLine("{0,-12}{1,-6}", "InputValue", "Count");
+
+            for (int x = 0; x < 11; x++)
+            {
+                if (entries[x] != 0)
+                {
+                    cntOfValidEntries += entries[x];
+                    Console.WriteLine("{0,5}{1,10}", x, entries[x]);
+                }
+            }
+            Console.WriteLine("\nNumber of Valid Entries: {0}", cntOfValidEntries);
+
+            Console.WriteLine("\nNumber of Values Entered Outside Acceptable Range: {0}", noOutsiderange);
+            Console.WriteLine("Number of Non-numeric Values Entered: {0}", cntOfInvalidEntries);
+            Console.WriteLine("Total Number of Inputs: {0}", (cntOfInvalidEntries + cntOfValidEntries + noOutsiderange));
         }
     }
 }
