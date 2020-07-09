@@ -24,11 +24,40 @@ namespace Section10
             dataList.Add(18M);
             dataList.Add("pieces");
             dataList.Add("14");
+
+            ValidationOfList(dataList);
+
+            foreach (var i in dataList)
+            {
+                Console.WriteLine(i);
+            }
+
+            
         }
 
-        public int TotalScore(object dataList)
+        public ArrayList ValidationOfList(ArrayList dataList)
         {
-            return 0;
+            int i = 0;
+            
+            ArrayList placeWithNoNumber = new ArrayList();
+
+            foreach (var item in dataList)
+            {
+
+                if (!double.TryParse(item.ToString(), out double result))
+                {
+                    placeWithNoNumber.Add(i); 
+                }
+                i++;
+            }
+
+            foreach (var item in placeWithNoNumber)
+            {
+                int.TryParse(item.ToString(), out int result);
+                dataList.RemoveAt(result);
+            }
+
+            return dataList;
         }
     }
 }
