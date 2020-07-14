@@ -25,39 +25,36 @@ namespace Section10
             dataList.Add("pieces");
             dataList.Add("14");
 
-            ValidationOfList(dataList);
+            int sum = sumList(ValidationOfList(dataList));
 
-            foreach (var i in dataList)
-            {
-                Console.WriteLine(i);
-            }
-
-            
+            Assert.AreEqual(sum, 147);
         }
 
         public ArrayList ValidationOfList(ArrayList dataList)
         {
-            int i = 0;
-            
-            ArrayList placeWithNoNumber = new ArrayList();
+            ArrayList goodValues = new ArrayList();
 
             foreach (var item in dataList)
             {
-
-                if (!double.TryParse(item.ToString(), out double result))
+                if (int.TryParse(item.ToString(), out int result))
                 {
-                    placeWithNoNumber.Add(i); 
+                    goodValues.Add(result);
                 }
-                i++;
             }
 
-            foreach (var item in placeWithNoNumber)
+            return goodValues;
+        }
+
+        public int sumList(ArrayList dataList)
+        {
+            int sum = 0;
+
+            foreach (int item in dataList)
             {
-                int.TryParse(item.ToString(), out int result);
-                dataList.RemoveAt(result);
+                sum += item;
             }
 
-            return dataList;
+            return sum;
         }
     }
 }
