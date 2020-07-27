@@ -54,6 +54,7 @@
     <Compile Include="Exam\ExamTest.cs" />
     <Compile Include="InheritanceTest.cs" />
     <Compile Include="Pen.cs" />
+    <Compile Include="QuizDK\Ticket.cs" />
     <Compile Include="Quiz\Lecture.cs" />
     <Compile Include="Quiz\Musical.cs" />
     <Compile Include="Person.cs" />
