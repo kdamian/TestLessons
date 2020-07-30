@@ -16,13 +16,50 @@ namespace QuizDK
 
         public Ticket(string name, string person, int seat, int code, DateTime date)
         {
-            name = eventName;
-            person = personName;
-            seat = seatNumber;
-            code = ticketCode;
-            date = eventDate;
+            EventName = name;
+            PersonName = person;
+            SeatNumber = seat;
+            TicketCode = code;
+            EventDate = date;
         }
 
-        public abstract void Reservation();
+        public string EventName 
+        { 
+            get {  return eventName; }
+            set { eventName = value; } 
+        }
+
+        public string PersonName 
+        {
+            get { return personName; }
+            set { personName = value; } 
+        }
+
+        public int SeatNumber 
+        { 
+            get { return seatNumber; }
+            set { seatNumber = value; } 
+        }
+
+        public int TicketCode 
+        { 
+            get { return ticketCode; }
+            set { ticketCode = value; }
+        }
+
+        public DateTime EventDate 
+        {
+            get { return eventDate; }
+            set { eventDate = value; }
+        }
+
+        public override string ToString()
+        {
+            return eventName.ToUpper() +
+                "\n\tWho:\t" + PersonName +
+                "\n\tWhere:\t" + SeatNumber +
+                "\n\tCODE:\t" + TicketCode +
+                "\n\tWhen:\t" + EventDate;
+        }
     }
 }
