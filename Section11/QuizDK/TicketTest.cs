@@ -9,7 +9,9 @@ namespace QuizDK
         [TestMethod]
         public void TestMethod1()
         {
-            Ticket ticket = new Ticket();
+            DateTime date = new DateTime(2020, 04, 14);
+            Play play = new Play("Star Wars", "Donkey Kong", 21, 123123, date, true);
+            Console.WriteLine(play);
         }
     }
 }

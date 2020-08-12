@@ -26,7 +26,7 @@ namespace QuizDK
         public override string ToString()
         {
             return base.ToString() +
-                "\nDo you want popcorn?\t" + AdditionalPopcorn;
+                "\n\tDo you want popcorn?\t" + AdditionalPopcorn;
 
             //return "Destination: " + Destination +
             //   "\nTotal Miles: " + DistanceTraveled +
