@@ -48,6 +48,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExamDK\AutoLoan.cs" />
+    <Compile Include="ExamDK\HomeLoan.cs" />
     <Compile Include="ExamDK\LoanProgram.cs" />
     <Compile Include="Exam\AutoLoan.cs" />
     <Compile Include="Exam\HomeLoan.cs" />

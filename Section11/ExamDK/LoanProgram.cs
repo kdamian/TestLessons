@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamDK
 {
-    class LoanProgram
+    abstract class LoanProgram
     {
         private int loanNumber;
         private string customerFirstName;
@@ -24,6 +24,8 @@ namespace ExamDK
             LoanAmount = loanAmount;
             TermOfLoan = term;
         }
+
+        #region Properties
 
         public int LoanNumber
         {
@@ -60,5 +62,9 @@ namespace ExamDK
             get { return termOfLoan; }
             set { termOfLoan = value; }
         }
+
+        #endregion
+
+        public abstract void CalculateInterest();
     }
 }
