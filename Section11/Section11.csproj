@@ -51,6 +51,7 @@
     <Compile Include="ExamDK\AutoLoan.cs" />
     <Compile Include="ExamDK\HomeLoan.cs" />
     <Compile Include="ExamDK\LoanProgram.cs" />
+    <Compile Include="ExamDK\LoanTests.cs" />
     <Compile Include="Exam\AutoLoan.cs" />
     <Compile Include="Exam\HomeLoan.cs" />
     <Compile Include="Exam\Loan.cs" />

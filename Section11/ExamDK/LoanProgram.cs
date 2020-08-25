@@ -65,6 +65,6 @@ namespace ExamDK
 
         #endregion
 
-        public abstract void CalculateInterest();
+        public abstract decimal CalculateInterest();
     }
 }

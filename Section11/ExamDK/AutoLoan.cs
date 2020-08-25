@@ -50,15 +50,16 @@ namespace ExamDK
 
         #endregion
 
-        public override void CalculateInterest()
+        public override decimal CalculateInterest()
         {
-            throw new NotImplementedException();
+            decimal result = (decimal)(InterestRate / (TermOfLoan * 12) * (LoanAmount + 1000));
+            return result;
         }
 
         public override string ToString()
         {
             return "Number of your loan: " + LoanNumber
-                + "\nIt is calculates form your loan: ";
+                + "\nCalculates for your AutoLoan: " + CalculateInterest();
         }
     }
 }
