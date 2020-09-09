@@ -47,11 +47,15 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="WebDriver, Version=3.11.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.3.11.2\lib\net45\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExamDK\ExamDK.cs" />
+    <Compile Include="ExamDK\IPageObjectDK.cs" />
+    <Compile Include="ExamDK\PageObjectOneDK.cs" />
+    <Compile Include="ExamDK\PageObjectTwoDK.cs" />
     <Compile Include="Exam\Exam.cs" />
     <Compile Include="Exam\IPageObject.cs" />
     <Compile Include="Exam\PageObjectTwo.cs" />
