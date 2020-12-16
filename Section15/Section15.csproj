@@ -48,6 +48,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DKHousingExam\Housing.cs" />
+    <Compile Include="DKHousingExam\IUnits.cs" />
+    <Compile Include="DKHousingExam\MultiUnit.cs" />
+    <Compile Include="DKHousingExam\SingleFamily.cs" />
     <Compile Include="Final Exam 1\BasePage.cs" />
     <Compile Include="Final Exam 1\ComplicatedPage.cs" />
     <Compile Include="Final Exam 1\Element.cs" />
