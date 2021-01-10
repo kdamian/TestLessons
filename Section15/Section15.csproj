@@ -52,6 +52,7 @@
     <Compile Include="DKHousingExam\IUnits.cs" />
     <Compile Include="DKHousingExam\MultiUnit.cs" />
     <Compile Include="DKHousingExam\SingleFamily.cs" />
+    <Compile Include="DKHousingExam\Tests.cs" />
     <Compile Include="Final Exam 1\BasePage.cs" />
     <Compile Include="Final Exam 1\ComplicatedPage.cs" />
     <Compile Include="Final Exam 1\Element.cs" />

@@ -8,6 +8,10 @@ namespace Section14.DKHousingExam
 {
 	public class Housing
 	{
+		private string _adddress;
+		private string _typeOfConstruction;
+		private int _yearBuilt;
+
 		public Housing(string address, string typeOfConstruction, int yearBuilt)
 		{
 			Address = address;
@@ -15,9 +19,9 @@ namespace Section14.DKHousingExam
 			YearBuilt = yearBuilt;
 		}
 
-		public string Address { get; set; }
-		public string TypeOfConstruction { get; set; }
-		public int YearBuilt { get; set; }
+		public string Address { get { return _adddress; } set { _adddress = value; } }
+		public string TypeOfConstruction { get { return _typeOfConstruction; } set { _typeOfConstruction = value; } }
+		public int YearBuilt { get { return _yearBuilt; } set { _yearBuilt = value; } }
 
 		public virtual decimal ProjectedRentalAmt()
 		{
@@ -26,12 +30,11 @@ namespace Section14.DKHousingExam
 
 		public override string ToString()
 		{
-			return string.Format(
-				"Address: {0}\n" +
-				"TypeOfConstruction: {1}\n" +
-				"YearBuilt: {2}\n",
-				Address, TypeOfConstruction, YearBuilt
-				);
+			return base.ToString() +
+							"\nAddress:" + Address +
+							"\nTypeOfConstruction:" + TypeOfConstruction +
+							"\nYearBuilt:" + YearBuilt.ToString();
+
 		}
 	}
 }

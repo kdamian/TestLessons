@@ -8,6 +8,14 @@ namespace Section14.DKHousingExam
 {
 	public class SingleFamily : Housing
 	{
+
+		private int _rentAmount;
+		private int _size;
+		private int _noOfBedrooms;
+		private int _noOfBathrooms;
+		private bool _idPorch;
+		private bool _isGarage;
+
 		public SingleFamily(string address, string typeOfConstruction, int yearBuilt,
 			int rentAmount, int size, int noOfBedrooms, int noOfBathrooms, bool isPorch, bool isGarage) 
 			: base(address, typeOfConstruction, yearBuilt)
@@ -20,32 +28,33 @@ namespace Section14.DKHousingExam
 			IsGarage = isGarage;
 		}
 
-		public int RentAmount { get; set; }
-		public int Size { get; set; }
-		public int NoOfBedrooms { get; set; }
-		public int NoOfBathrooms { get; set; }
-		public bool IsPorch { get; set; }
-		public bool IsGarage { get; set; }
+		public int RentAmount { get { return _rentAmount; } set { _rentAmount = value; } }
+		public int Size { get { return _size; } set { _size = value; } }
+		public int NoOfBedrooms { get { return _noOfBedrooms; } set { _noOfBedrooms = value; } }
+		public int NoOfBathrooms { get { return _noOfBathrooms; } set { _noOfBathrooms = value; } }
+		public bool IsPorch { get { return _idPorch; } set { _idPorch = value; } }
+		public bool IsGarage { get { return _isGarage; } set { _isGarage = value; } }
 
 		public override decimal ProjectedRentalAmt()
 		{
-			return RentAmount * 12;
+			return RentAmount * 12M;
 		}
 
 		public override string ToString()
 		{
-			return string.Format(
-				"Address: {0}\n" +
-				"TypeOfConstruction: {1}\n" +
-				"YearBuilt: {2}\n",
-				"RentAmount: {3}\n",
-				"Size: {4}\n",
-				"NoOfBedrooms: {5}\n",
-				"NoOfBathrooms: {6}\n",
-				"IsPorch: {7}\n",
-				"IsGarage: {8}\n",
-				Address, TypeOfConstruction, YearBuilt, RentAmount, Size, NoOfBedrooms, NoOfBathrooms, IsPorch, IsGarage
-				);
+			return base.ToString() +
+				"\n\n\nAddress:" + Address +
+				"\nTypeOfConstruction:" + TypeOfConstruction +
+				"\nYearBuilt:" + YearBuilt.ToString() +
+				"\nRentAmount:" + RentAmount.ToString() +
+				"\nSize:" + Size.ToString() +
+				"\nNoOfBedrooms:" + NoOfBedrooms.ToString() +
+				"\nNoOfBathrooms:" + NoOfBathrooms.ToString() +
+				"\nIsPorch:" + IsPorch.ToString() +
+				"\nIsGarage:" + IsGarage.ToString() +
+				"\nExpected Annual Rents: " + ProjectedRentalAmt().ToString("C");
+
+
 		}
 
 	}
